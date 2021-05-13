@@ -9,8 +9,10 @@ User.destroy_all
 
 puts 'Creating users...'
 User.create([
-    {name: email: "teste2@teste.com", password: "123456"}
-    puts "numero de users"
+    {email: "teste1@teste.com", password: "123456"},
+    {email: "teste2@teste.com", password: "123456"}
+    ])
     puts User.count
+
 
 puts 'finished!'
