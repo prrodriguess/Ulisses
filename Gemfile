@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 
 gem 'autoprefixer-rails'
+gem 'faker'
 gem 'execjs', '2.7.0'
 gem 'font-awesome-sass'
 gem 'simple_form'

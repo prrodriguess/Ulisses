@@ -1,3 +1,5 @@
+require 'faker'
+
 puts 'Cleaning database...'
 
 # Weight_target.destroy_all
@@ -8,12 +10,10 @@ User.destroy_all
 
 
 puts 'Creating users...'
-User.create([
-    {email: "teste1@teste.com", password: "123456"},
-    {email: "teste2@teste.com", password: "123456"},
-    {email: "teste3@teste.com", password: "123456"}
-    ])
-    puts User.count
-
+100.times do {
+    User.create([
+    {name: Faker::Name.first_name, email: Faker::Internet.email(name: :name), password: "123456"}])}
+end
+puts User.count
 
 puts 'finished!'
