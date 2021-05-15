@@ -1,4 +1,4 @@
-class AddColumnToSmokingGoal < ActiveRecord::Migration[6.1]
+class AddColumnToSmokingGoals < ActiveRecord::Migration[6.1]
   def change
     add_column :smoking_goals, :current, :bigint
     add_column :smoking_goals, :desired, :bigint
