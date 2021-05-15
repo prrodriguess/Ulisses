@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :smoking_goal
-         has_many :weight_goal
+  has_many :smoking_goals
+  has_many :weight_goals
 end
