@@ -5,7 +5,7 @@ body, html, #home {
 
 body {
 	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://blog.tremeterra.com.br/wp-content/uploads/2018/05/5-tipos-de-escalada-incriveis-que-voce-precisa-conhecer.jpeg) no-repeat;
-	background-image: opacity: 0.1;
+	background-image: opacity 0.1;
 	background-attachment: fixed;
 	font-family: Helvetica,Arial,sans-serif;
 }
@@ -92,7 +92,7 @@ nav.navbar-transparente {
 }
 
 select {
-	background: rgb(255,255,255,0.25);
+	background: rgba(255,255,255,0.25);
 	border-radius: 10rem;
 	height: 6.5rem;
 	line-height: 6.5rem;
