@@ -10,3 +10,21 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+nav.navbar-transparente {
+	padding: 15px 0;
+	background: rgba(0,0,0,0.6);
+}
+
+.navbar-ligth .navbar-nav .nav-link {
+	color: white
+}
+
+.navbar-ligth .navbar-nav .nav-link:hover {
+	color: #9bf0e1
+}
+
+.navbar-ligth .navbar-toggler {
+	color: rgba(255,255,255,.5);
+	border-color: rgba(255,255,255,.5);
+}
