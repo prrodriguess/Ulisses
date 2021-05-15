@@ -1,22 +1,46 @@
 class WeightGoalsController < ApplicationController
-    def index
-    end
+  before_action :set_weight_goal, only: [:show, :edit, :update, :destroy]
 
-    def create
-    end
+  def index
+    @weight_goals = WeightGoal.all
+  end
 
-    def new
+  def create
+    @weight_goal = WeightGoal.new(weight_goal_params)
+    if @weight_goal.save
+      redirect_to weight_goal_path(@weight_goal)
+    else
+      render "new"
     end
+  end
 
-    def edit
-    end
+  def new
+    @weight_goal = WeightGoal.new
+  end
 
-    def show
-    end
+  def edit
+  end
 
-    def update
-    end
+  def show
+  end
 
-    def destroy
-    end
+  def update
+    @weight_goal.update(weight_goal_params)
+    redirect_to weight_goal_path(@weight_goal)
+  end
+
+  def destroy
+    @weight_goal.destroy
+    redirect_to weight_goals_path
+  end
+
+  private
+
+  def set_weight_goal
+    @weight_goal = WeightGoal.find(params[:id])
+  end
+
+  def weight_goal_params
+    params.require(:weight_goal).permit(:current, :desired, :deadline, :penalty)
+  end
 end
