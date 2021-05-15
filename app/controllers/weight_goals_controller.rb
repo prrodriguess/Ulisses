@@ -1,5 +1,6 @@
 class WeightGoalsController < ApplicationController
   before_action :set_weight_goal, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   def index
     @weight_goals = WeightGoal.all
@@ -7,6 +8,7 @@ class WeightGoalsController < ApplicationController
 
   def create
     @weight_goal = WeightGoal.new(weight_goal_params)
+    @weight_goal.user_id = @user.id
     if @weight_goal.save
       redirect_to weight_goal_path(@weight_goal)
     else
@@ -38,6 +40,10 @@ class WeightGoalsController < ApplicationController
 
   def set_weight_goal
     @weight_goal = WeightGoal.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def weight_goal_params
