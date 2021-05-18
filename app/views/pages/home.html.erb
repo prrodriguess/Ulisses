@@ -12,15 +12,17 @@
               <h1>Assuma o controle.<br>
               Seja seu próprio ídolo.</h1>
                <div class="goal">
-                 <select class="form-select" aria-label="Selecione sua meta ...">
+                <form method="GET" action="<%= new_weight_goal_path %>">
+                 <div class="dropdown_goal">
+                  <select name="goal" class="form-select" aria-label="Selecione sua meta ...">
                     <option selected>Selecione sua meta ...</option>
-                    <option value="1">Perder Peso</option>
-                    <option value="2">Parar de fumar</option>
+                    <option value="peso">Perder Peso</option>
+                    <option value="fumar">Parar de fumar</option>
                   </select>
                   <% if current_user.present? %>
-                    <%= link_to "Assuma o compromisso", weight_goals_path, class: "btn btn-warning" %>
+                    <%= link_to "Assumir compromisso", weight_goals_path, class: "btn btn-warning" %>
                   <% else %>
-                    <%= link_to "Assuma o compromisso", weight_goals_path, class: "btn btn-warning" %>
+                    <%= link_to "Assumir compromisso", weight_goals_path, class: "btn btn-warning" %>
                   <% end %>
                </div>
             </div>
@@ -56,7 +58,7 @@
               <p>Já sabe o quer fazer hoje? Quer mudar seus hábitos?</p>
 
               <h3>Navegar</h3>
-              <p>Veja como dar um up na sua vida, temos a ferramenta para você mudar sua vida!</p>
+              <p>Veja como dar um up na sua vida, temos a ferramenta para você!</p>
 
               <h3>Descobrir</h3>
               <p>Veja o que seus amigos estão achando sobre sua mudança.</p>
@@ -106,13 +108,13 @@
             <div class="col-md-4">
               <ul>
                 <li>
-                  <a href=""><img src="images/facebook.png"></a>
+                  <%= image_tag("facebook.png") %>
                 </li>
                 <li>
-                  <a href=""><img src="images/twitter.png"></a>
+                  <%= image_tag("twitter.png") %>
                 </li>
                 <li>
-                  <a href=""><img src="images/instagram.png"></a>
+                  <%= image_tag("instagram.png") %>
                 </li>
               </ul>
             </div>

@@ -70,6 +70,11 @@ body {
 	vertical-align: middle;
 }
 
+select .aria-label{
+	background-image: url(../images/arrow_dropdown.png) no-repeat scroll right center;
+	overflow: hidden;
+}
+
 select {
 	background: rgba(255,255,255,0.25);
 	border-radius: 10rem;
@@ -79,6 +84,7 @@ select {
 	padding: 0 3rem;
 	position: relative;
 	width: 47.5rem;
+	color: white;
 }
 
 /* Rodapé
