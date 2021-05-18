@@ -19,10 +19,12 @@
                     <option value="peso">Perder Peso</option>
                     <option value="fumar">Parar de fumar</option>
                   </select>
-                 </div>
-                <input type="submit" value="Assuma o compromisso" class="btn btn-warning" />
-                </form>
-            </div>
+                  <% if current_user.present? %>
+                    <%= link_to "Assumir compromisso", weight_goals_path, class: "btn btn-warning" %>
+                  <% else %>
+                    <%= link_to "Assumir compromisso", weight_goals_path, class: "btn btn-warning" %>
+                  <% end %>
+               </div>
             </div>
           </div><!-- fim row -->
         </div> <!-- fim container -->

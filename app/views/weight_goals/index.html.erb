@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h3>Minhas Metas - Perda de Peso</h3>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mt-5 bg-white rounded">
+      <div class="text-center mt-3">
+        <h4>Minhas Metas - Perda de Peso</h4>
+      </div>
       <ul>
         <% @weight_goals.each do |weight_goal| %>
           <li>
-            <%= link_to "#{weight_goal.desired}kg até #{weight_goal.deadline}", weight_goal_path(weight_goal) %>
+            <p><%= link_to "#{weight_goal.desired}kg até #{weight_goal.deadline}", weight_goal_path(weight_goal) %></p>
           </li>
         <% end %>
       </ul>

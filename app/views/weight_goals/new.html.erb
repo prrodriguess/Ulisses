@@ -1,1 +1,9 @@
-<%= render "shared/form" %>
+<div class="container bg-white p-4 mt-5 rounded">
+    <div class="row justify-content-center">
+        <h4 class="mt-5">Criar um novo compromisso</h4>
+        <div class="col-12">
+            <%= render "shared/form" %>
+            <p>Amount: <%= humanized_money_with_symbol(@weight_goal.price) %></p>
+        </div>
+    </div>
+</div>

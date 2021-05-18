@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :smoking_goals
   has_many :weight_goals
+  
 end

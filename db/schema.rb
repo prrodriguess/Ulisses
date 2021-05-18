@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_14_022543) do
+ActiveRecord::Schema.define(version: 2021_05_18_034532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_05_14_022543) do
     t.date "deadline"
     t.bigint "penalty"
     t.bigint "user_id", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_weight_goals_on_user_id"
   end
 
