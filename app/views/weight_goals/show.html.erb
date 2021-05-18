@@ -11,7 +11,6 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h2 class="card-title">Meta do <%= current_user.name %> </h2>
-                <%= format_name(@user) %>
                 <p>Peso atual : <%= @weight_goal.current %> kg</p><br>
                 <p>Peso meta : <%= @weight_goal.desired %> kg</p><br>
                 <p><%= @weight_goal.deadline %></p><br>
@@ -23,6 +22,7 @@
             </div>
         </div>
             <%= link_to "Ver minhas metas", weight_goals_path, class: 'btn btn-primary' %>
+            <%= link_to 'Remover', weight_goal_path(@weight_goal), method: :delete, class: 'btn btn-danger', data: { confirm: 'Você tem certeza que deseja deletar esta meta ?' } %>
         </div>
     </div>
 </div>
