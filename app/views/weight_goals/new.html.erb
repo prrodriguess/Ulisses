@@ -3,6 +3,7 @@
         <h4 class="mt-5">Criar um novo compromisso</h4>
         <div class="col-12">
             <%= render "shared/form" %>
+            <p>Amount: <%= humanized_money_with_symbol(@weight_goal.price) %></p>
         </div>
     </div>
 </div>

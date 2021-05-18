@@ -2,12 +2,7 @@ require 'faker'
 
 puts 'Cleaning database...'
 
-# Weight_target.destroy_all
-# Smoke_target.destroy_all
 User.destroy_all
-
-# puts 'Creating categories...'
-
 
 puts 'Creating users...'
 10.times do
