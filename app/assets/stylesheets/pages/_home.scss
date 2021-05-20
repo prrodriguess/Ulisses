@@ -9,6 +9,22 @@ body {
 	font-family: Helvetica,Arial,sans-serif;
 }
 
+h1 {
+	animation-duration: 5s;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
 
 /* capa
 ----------------------------*/
@@ -17,11 +33,13 @@ body {
 }
 
 .btn-custom {
+	background-color: orange;
 	color: white;
 	border-radius: 500px;
 	text-transform: uppercase;
 	transition: 0.4s, color 0.4s;
 	padding: 10px 20px;
+	margin: 0 auto;
 }
 
 .btn-branco {
@@ -68,11 +86,6 @@ body {
 	font-size: 2rem;
 	padding: 0;
 	vertical-align: middle;
-}
-
-select .aria-label{
-	background-image: url(../images/arrow_dropdown.png) no-repeat scroll right center;
-	overflow: hidden;
 }
 
 select {
