@@ -17,6 +17,7 @@ class WeightGoalsController < ApplicationController
   end
 
   def new
+    @body_image = "body-image-weigth-goals"
     @weight_goal = WeightGoal.new
   end
 

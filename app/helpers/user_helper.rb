@@ -1,4 +1,4 @@
-# module UserHelper
+module UserHelper
 #     def format_name(user)
 #       if user.gender == "M"
 #         "Mr. #{user.name}"
@@ -6,4 +6,4 @@
 #         "Ms. #{user.name}"
 #       end
 #     end
-#   end
+end

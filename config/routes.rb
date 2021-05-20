@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-
+  
   resources :weight_goals
+  root to: 'pages#home'
 end
