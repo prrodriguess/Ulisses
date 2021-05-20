@@ -15,18 +15,6 @@ ActiveRecord::Schema.define(version: 2021_05_20_010441) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "payments", force: :cascade do |t|
-    t.string "state"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "checkout_session_id"
-    t.bigint "user_id", null: false
-    t.bigint "weight_goals_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_payments_on_user_id"
-    t.index ["weight_goals_id"], name: "index_payments_on_weight_goals_id"
-  end
-
   create_table "smoking_goals", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,11 +31,11 @@ ActiveRecord::Schema.define(version: 2021_05_20_010441) do
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id", null: false
-    t.bigint "weight_goals_id", null: false
+    t.bigint "weight_goal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_transactions_on_user_id"
-    t.index ["weight_goals_id"], name: "index_transactions_on_weight_goals_id"
+    t.index ["weight_goal_id"], name: "index_transactions_on_weight_goal_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,10 +63,8 @@ ActiveRecord::Schema.define(version: 2021_05_20_010441) do
     t.index ["user_id"], name: "index_weight_goals_on_user_id"
   end
 
-  add_foreign_key "payments", "users"
-  add_foreign_key "payments", "weight_goals", column: "weight_goals_id"
   add_foreign_key "smoking_goals", "users"
   add_foreign_key "transactions", "users"
-  add_foreign_key "transactions", "weight_goals", column: "weight_goals_id"
+  add_foreign_key "transactions", "weight_goals"
   add_foreign_key "weight_goals", "users"
 end

@@ -3,8 +3,8 @@
     <div class="col">
       <h1>transaction #<%= @transaction.id %> <small><span class="badge badge-primary"><%= @transaction.state %></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @transaction.created_at.to_date %></li>
-        <li><strong>TEDDY</strong> <%= @transaction.teddy.name %> [<%= @transaction.teddy_sku %>]</li>
+        <li><strong>Preço da minha penalidade</strong> <%= @transaction.created_at.to_date %></li>
+        <li><strong>Alcançar meu peso meta</strong> <%= @transaction.teddy.name %> [<%= @transaction.teddy_sku %>]</li>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
         </li>
       </ul>
