@@ -1,8 +1,9 @@
 <%= simple_form_for @weight_goal do |f| %>
-  <%= f.input :current %>
-  <%= f.input :desired %>
-  <%= f.input :deadline %>
-  <%= f.input :penalty %>
+  <%= f.input :weight_goals_title, :label => 'Título', :placeholder => 'Projeto Verão' %>
+  <%= f.input :current, :label => "Peso atual (kg)", :placeholder => '70'  %>
+  <%= f.input :desired, :label => "Peso desejado (kg)", :placeholder => '60' %>
+  <%= f.input :deadline, :label => "Prazo", :placeholder => '70' %>
+  <%= f.input :penalty, :label => "Penalidade em caso de descumprimento (R$)", :placeholder => '1000' %>
   <%= f.input :price, as: :currency %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
