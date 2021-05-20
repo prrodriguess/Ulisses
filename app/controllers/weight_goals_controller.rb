@@ -24,6 +24,7 @@ class WeightGoalsController < ApplicationController
   end
 
   def show
+    @weight_goal = WeightGoal.find(params[:id])
   end
 
   def update
