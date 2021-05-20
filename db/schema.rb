@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_230317) do
+ActiveRecord::Schema.define(version: 2021_05_20_010441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2021_05_20_230317) do
     t.bigint "penalty"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_smoking_goals_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "weight_goal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["weight_goal_id"], name: "index_transactions_on_weight_goal_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,5 +65,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_230317) do
   end
 
   add_foreign_key "smoking_goals", "users"
+  add_foreign_key "transactions", "users"
+  add_foreign_key "transactions", "weight_goals"
   add_foreign_key "weight_goals", "users"
 end
