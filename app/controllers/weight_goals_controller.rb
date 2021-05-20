@@ -48,6 +48,6 @@ class WeightGoalsController < ApplicationController
   end
 
   def weight_goal_params
-    params.require(:weight_goal).permit(:current, :desired, :deadline, :penalty, :price)
+    params.require(:weight_goal).permit(:current, :desired, :deadline, :penalty, :price, :weight_goals_title)
   end
 end

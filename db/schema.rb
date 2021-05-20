@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_010441) do
     t.bigint "penalty"
     t.bigint "user_id", null: false
     t.integer "price_cents", default: 0, null: false
+    t.string "weight_goals_title"
     t.index ["user_id"], name: "index_weight_goals_on_user_id"
   end
 
