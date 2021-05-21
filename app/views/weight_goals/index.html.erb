@@ -1,14 +1,23 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mt-5 bg-white rounded">
-      <div class="text-center mt-3">
+      <div class="text-center mt-3 mb-3">
         <h4>Minhas Metas - Perda de Peso</h4>
       </div>
       <ul>
         <% @weight_goals.each do |weight_goal| %>
-          <li>
-            <p><%= link_to "#{weight_goal.desired}kg até #{weight_goal.deadline}", weight_goal_path(weight_goal) %></p>
-          </li>
+          <div class="col-6 col-md-6 mt-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= current_user.name %></h5>
+                <p class="card-text">Peso atual : <%= weight_goal.current %></p>
+                <p class="card-text">Peso desejado : <%= weight_goal.desired %></p>
+                <p class="card-text">Tempo estimado : <%= weight_goal.deadline %></p>
+                <p>Penalidade : <%= humanized_money_with_symbol(weight_goal.price) %></p>
+                <%= link_to "More details", weight_goals_path, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
         <% end %>
       </ul>
       <%= link_to "Criar nova meta", new_weight_goal_path, class: 'btn btn-primary' %>
