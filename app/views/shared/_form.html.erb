@@ -13,9 +13,9 @@ wrapper_mappings: {
   <%= f.input :current, :label => "Peso atual (kg)", :placeholder => '70'  %>
   <%= f.input :desired, :label => "Peso desejado (kg)", :placeholder => '60' %>
   <%= f.input :deadline, :label => "Prazo", :placeholder => '70' %>
-  <%= f.input :penalty, :label => "Penalidade em caso de descumprimento (R$)", :placeholder => '1000' %>
-  <%= f.input :price, as: :currency %>
-  <p class="text-left mr-2">Amount: <%= humanized_money_with_symbol(@weight_goal.price) %></p>
+  <%= f.input :penalty, :label => "Penalidade (R$)", :placeholder => '1.000,00' %>
+  <%# <%= f.input :price, as: :currency %>
+  <%# <p class="text-left mr-2"><%= humanized_money_with_symbol(@weight_goal.price) %></p>
  </div>
   <div class="form-group row mb-0">
   	<div class="col-sm-4 offset-sm-4">

@@ -24,8 +24,8 @@
             <%= render "shared/formTransaction" %>
             <%= link_to "Ver minhas metas", weight_goals_path, class: 'btn btn-primary' %>
             <%= link_to 'Remover', weight_goal_path(@weight_goal), method: :delete, class: 'btn btn-danger', data: { confirm: "Você ainda tem #{(@weight_goal.deadline - Date.current).to_i} dias para perder #{@weight_goal.current - @weight_goal.desired}kg. \nNão desista! \nSe desistir agora, você pagará uma multa de R$#{@weight_goal.price * 0.25}. \nVocê tem certeza que deseja deletar esta meta?" } %>
+            <%= link_to "Home", root_path, class: 'btn btn-primary' %>
             <%# Pesquisar como personalizar as mensagens de diálogo na confirmação do método delete. Achei isso http://thelazylog.com/custom-dialog-for-data-confirm-in-rails/ %>
         </div>
     </div>
 </div>
-
