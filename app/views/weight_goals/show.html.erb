@@ -13,7 +13,7 @@
                 <p><%= "Para atingir seu objetivo, você pode reduzir a ingestão de calorias em 1000kcal e correr #{(@weight_goal.current * 5).to_i / 25} km por semana"%></p>
                 <%# CORRIGIR FORMULA kg => kcal => km %>
                 <p><%=  %></p><br>
-                <p>Sua penalidade é : <br><br><%= humanized_money_with_symbol(@weight_goal.price) %></p>
+                <p>Sua penalidade é : <br><br><%= humanized_money_with_symbol(@weight_goal.penalty) %></p>
                 <p>Progresso Mensal</p>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= (@weight_goal.current - @weight_goal.desired)/100%></div>
