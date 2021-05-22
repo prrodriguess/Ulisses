@@ -13,7 +13,6 @@
                 <p class="card-text">Peso atual : <%= weight_goal.current %></p>
                 <p class="card-text">Peso desejado : <%= weight_goal.desired %></p>
                 <p class="card-text">Tempo estimado : <%= weight_goal.deadline %></p>
-                <p>Penalidade : <%= humanized_money_with_symbol(weight_goal.price) %></p>
                 <%= link_to "More details", weight_goals_path, class: "btn btn-primary" %>
               </div>
             </div>
