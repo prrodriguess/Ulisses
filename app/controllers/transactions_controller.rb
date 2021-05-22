@@ -22,7 +22,7 @@ class TransactionsController < ApplicationController
       end
 
       def show
-        @transaction = current_user.transaction.find(params[:id])
+        @transaction = Transaction.find(params[:id])
       end
 
       private
