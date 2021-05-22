@@ -1,9 +1,11 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= current_user.name %></strong> for <strong><%= humanized_money_with_symbol @transaction.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center mt-4">
+      <h2 class="display-4 text-center mt-3 mb-5">Se eu <strong class="text-primary"><%= current_user.name %></strong> não alcançar 70 kg, vou pagar <strong class="text-danger"><%= humanized_money_with_symbol @transaction.amount %></strong></h2>
+      <p class="mb-5">Vou alcançar minha meta agora !!</p>
+      <div class="text-center">
+        <button id="pay" class="btn btn-primary">Colocar pagamento</button>
+      </div>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
