@@ -1,16 +1,20 @@
 <div class="container">
   <div class="row py-4">
     <div class="col">
-      <h2>transaction #<%= @transaction.id %> <small><span class="badge badge-primary"><%= @transaction.state %></span></small></h2>
-      <ul class="list-unstyled">
+      <h2>Parabéns!</h2> 
+      <br>
+      <h2>Você acaba de assumir um compromisso com seu futuro.</h2>
+      <%# <ul class="list-unstyled"> %>
         <%# <li><strong>Penalidade</strong> <%= @transaction.created_at.to_date %></li>
         <%# <li><strong>Prazo</strong> <%= humanized_money_with_symbol @weight_goal.deadline %></li>
-        <li><strong>Penalidade</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
+        <%# <li><strong>Penalidade</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
         <%# <li><strong>Prazo</strong> <%= @transaction.weight_goal.weight_goals_title %></li>
         <%# <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
-        </li>
-      </ul>
+        <%# </li> %>
+      <%# </ul> %>
       <%# <p>Estimated delivery in <strong>2 business days</strong></p> %>
+      <%= link_to "Minhas metas", weight_goals_path, class: 'btn btn-primary' %>
+      <%= link_to "Home", root_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
