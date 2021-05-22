@@ -25,6 +25,7 @@ class WeightGoalsController < ApplicationController
   end
 
   def show
+    @body_image = "body-image-show"
     @weight_goal = WeightGoal.find(params[:id])
   end
 
