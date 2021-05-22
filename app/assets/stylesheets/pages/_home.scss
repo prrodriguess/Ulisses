@@ -104,7 +104,8 @@ h1 {
 	vertical-align: middle;
 }
 
-select {
+.form-select {
+	display: inline;
 	background: rgba(255,255,255,0.25);
 	border-radius: 10rem;
 	height: 6.5rem;
@@ -114,6 +115,7 @@ select {
 	position: relative;
 	width: 47.5rem;
 	color: white;
+	margin-bottom: 30px;
 }
 
 /* Rodapé

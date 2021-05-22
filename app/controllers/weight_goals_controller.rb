@@ -1,6 +1,7 @@
 class WeightGoalsController < ApplicationController
   before_action :set_weight_goal, only: [:show, :edit, :update, :destroy]
   before_action :set_user
+  before_action :set_transaction, only: [:destroy]
 
   def index
     @weight_goals = WeightGoal.all
@@ -35,6 +36,7 @@ class WeightGoalsController < ApplicationController
   end
 
   def destroy
+    @transaction.destroy
     @weight_goal.destroy
     redirect_to weight_goals_path
   end
@@ -47,6 +49,10 @@ class WeightGoalsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
   end
 
   def weight_goal_params
