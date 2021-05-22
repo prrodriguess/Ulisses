@@ -9,12 +9,13 @@
           <div class="col-6 col-md-6 mt-5">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title"><%= current_user.name %></h5>
-                <p class="card-text">Peso atual : <%= weight_goal.current %></p>
-                <p class="card-text">Peso desejado : <%= weight_goal.desired %></p>
-                <p class="card-text">Tempo estimado : <%= weight_goal.deadline %></p>
-                <p>Penalidade : <%= humanized_money_with_symbol(weight_goal.price) %></p>
-                <%= link_to "More details", weight_goals_path, class: "btn btn-primary" %>
+                <h5 class="card-title"><%= weight_goal.weight_goals_title %></h5>
+                <p class="card-text">Peso atual: <%= weight_goal.current %></p>
+                <p class="card-text">Meta: <%= weight_goal.desired %></p>
+                <p class="card-text">Tempo restante: <%= (weight_goal.deadline - Date.today).to_i %> dia(s)</p>
+                <p class="card-text">Penalidade: <%= number_to_currency(weight_goal.penalty, unit: "R$", separator: ",", delimiter: ".")%> </p>
+                <%= link_to "Detalhes", weight_goal_path(weight_goal.id), class: "btn btn-primary" %>
+                <%= link_to "Remover", weight_goal_path(weight_goal.id), method: :delete, class: 'btn btn-danger', data: { confirm: "Você ainda tem #{(weight_goal.deadline - Date.current).to_i} dias para perder #{weight_goal.current - weight_goal.desired}kg. \nNão desista! \nSe desistir agora, você pagará uma multa de #{number_to_currency(weight_goal.penalty * 0.25, unit: "R$", separator: ",", delimiter: ".")}. \nVocê tem certeza que deseja deletar esta meta?" } %>
               </div>
             </div>
           </div>
