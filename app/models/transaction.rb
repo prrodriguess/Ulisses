@@ -1,6 +1,6 @@
 class Transaction < ApplicationRecord
   belongs_to :user
-  belongs_to :weight_goal
+  belongs_to :goal
 
   monetize :amount_cents
 end

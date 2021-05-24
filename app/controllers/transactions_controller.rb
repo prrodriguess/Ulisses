@@ -2,14 +2,14 @@ class TransactionsController < ApplicationController
     before_action :set_user
 
     def create
-        weight_goal = WeightGoal.find(params[:weight_goal_id])
-        transaction  = Transaction.create!(amount: weight_goal.penalty, state: 'pending', weight_goal_id: weight_goal.id, user: current_user)
+        goal = Goal.find(params[:goal_id])
+        transaction  = Transaction.create!(amount: goal.penalty, state: 'pending', goal_id: goal.id, user: current_user)
       
         session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
           line_items: [{
             name: current_user.name,
-            amount: weight_goal.penalty,
+            amount: goal.penalty,
             currency: 'brl',
             quantity: '1'
           }],
