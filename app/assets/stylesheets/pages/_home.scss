@@ -4,27 +4,34 @@ body, html, #home {
 
 
 body{
-	font-family: Helvetica,Arial,sans-serif;
+	font-family: 'Bebas Neue', cursive;
 }
 
 .body-image-show {
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.saudevitalidade.com/wp-content/uploads/2019/10/mantenha-a-cabe%C3%A7a-fria.jpg) no-repeat;
+	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), no-repeat;
+	background-image: url(show_page.png) ;
 	background-attachment: fixed;
 }
 
 .body-image-home {
-	
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://blog.tremeterra.com.br/wp-content/uploads/2018/05/5-tipos-de-escalada-incriveis-que-voce-precisa-conhecer.jpeg) no-repeat;
+	background-repeat: no-repeat;
+	background-image: url(bg_home.png);
 	background-attachment: fixed;
 }
 
 .body-image-weigth-goals {
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://blog.tremeterra.com.br/wp-content/uploads/2018/08/232701-conheca-os-x-esportes-radicais-mais-praticados-no-brasil.jpg) no-repeat;
+	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), no-repeat;
+	background-image: url(new_page.png);
 	background-attachment: fixed;
 }
 
+
 h1 {
-	animation-duration: 5s;
+	margin: 0;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	font-size: 32px;
+	animation-duration: 3s;
 	animation-name: slidein;
 }
 
@@ -95,14 +102,6 @@ h1 {
 	padding-top: 20px;
 }
 
-.goal {
-	background-color: transparent;
-	border-radius: 500px;
-	font-weight: 200;
-	font-size: 2rem;
-	padding: 0;
-	vertical-align: middle;
-}
 
 .form-select {
 	display: inline;
