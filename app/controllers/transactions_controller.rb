@@ -11,7 +11,8 @@ class TransactionsController < ApplicationController
             name: current_user.name,
             amount: goal.penalty * 100,
             currency: 'brl',
-            quantity: '1'
+            quantity: '1',
+            description: "Você só será cobrado se não cumprir sua meta dentro do prazo."
           }],
           success_url: transaction_url(transaction),
           cancel_url: transaction_url(transaction)
