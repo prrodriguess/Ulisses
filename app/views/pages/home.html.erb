@@ -5,20 +5,12 @@
               <h1 id="effect">Assuma o controle.<br>
               Seja seu próprio ídolo.</h1>
 
-                  <form method="GET" action="<%= new_goal_path %>">
+                  <form method="GET" action="<%= current_user.present? ? new_goal_path : goals_path %>">
                     <div class="dropdown_goal">
-                      <select name="goal" class="form-select" aria-label="Selecione sua meta ...">
-                        <option selected>Selecione sua meta ...</option>
-                        <option value="peso">Perder Peso</option>
-                        <option value="fumar">Parar de fumar</option>
-                      </select>
+                      <input type="text" id="goal" name="goal" class="form-select">
                     </div>
-                  </form>
-              <% if current_user.present? %>
-              <%= link_to "Assumir compromisso", new_goal_path, class: "btn-custom mt-4" %>
-            <% else %>
-              <%= link_to "Assumir compromisso", goals_path, class: "btn-custom mt-4" %>
-            <% end %>
+                    <input type="submit" class="btn-custom mt-4" value="Assumir compromisso">
+            </form>
             </div>
           </div><!-- fim row -->
         </div> <!-- fim container -->
