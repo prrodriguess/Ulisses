@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
           payment_method_types: ['card'],
           line_items: [{
             name: current_user.name,
-            amount: goal.penalty,
+            amount: goal.penalty * 100,
             currency: 'brl',
             quantity: '1'
           }],
