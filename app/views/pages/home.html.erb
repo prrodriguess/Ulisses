@@ -5,7 +5,7 @@
               <h1 id="effect">Assuma o controle.<br>
               Seja seu próprio ídolo.</h1>
 
-                  <form method="GET" action="<%= current_user.present? ? new_goal_path : goals_path %>">
+                  <form method="GET" action="<%= current_user.present? ? new_goal_path : new_goal_path %>">
                     <div class="dropdown_goal">
                       <input type="text" id="goal" name="goal" class="form-select">
                     </div>

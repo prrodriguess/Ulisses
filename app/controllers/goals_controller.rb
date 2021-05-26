@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :home, :new ]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
   before_action :set_user
   before_action :set_transaction, only: [:destroy]
@@ -19,7 +20,7 @@ class GoalsController < ApplicationController
 
   def new
     @body_image = "body-image-weigth-goals"
-    @goal = Goal.new
+    @goal = Goal.new(title: params[:goal])
   end
 
   def edit
