@@ -11,7 +11,12 @@
   width: 40px;
 }
 
+.navbar-expand-md .navbar-collapse {
+	justify-content: flex-end;
+}
+
 nav.navbar-transparente {
+	justify-content: space-between;
 	padding: 15px 0;
 	background: rgba(0,0,0,0.6);
 }
@@ -27,4 +32,8 @@ nav.navbar-transparente {
 .navbar-ligth .navbar-toggler {
 	color: rgba(255,255,255,.5);
 	border-color: rgba(255,255,255,.5);
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+	padding-right: 50px;
 }
