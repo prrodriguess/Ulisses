@@ -5,6 +5,7 @@ class GoalsController < ApplicationController
   before_action :set_transaction, only: [:destroy]
 
   def index
+    @body_image = "body-image-index"
     @goals = Goal.all
   end
 

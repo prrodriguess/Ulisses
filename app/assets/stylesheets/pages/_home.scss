@@ -7,6 +7,23 @@ body{
 	font-family: 'Bebas Neue', cursive;
 }
 
+.body-image-transaction {
+	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(transaction.png) no-repeat;
+	background-attachment: fixed;
+}
+
+.body-image-transaction-new {
+	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(transaction_page.png) no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
+.body-image-index {
+	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(index_page.png) no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
 .body-image-show {
 	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(show_page.png) no-repeat;
 	background-attachment: fixed;
@@ -28,7 +45,7 @@ h1 {
 	color: white;
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 	font-size: 32px;
-	animation-duration: 3s;
+	animation-duration: 1s;
 	animation-name: slidein;
 }
 
@@ -55,11 +72,12 @@ h1 {
 .btn-custom {
 	background-color: orange;
 	color: white;
-	border-radius: 500px;
+	border-radius: 2px;
 	text-transform: uppercase;
 	transition: 0.4s, color 0.4s;
 	padding: 10px 20px;
 	margin: 0 auto;
+	border: 1px solid #fff;
 }
 
 .btn-branco {
@@ -103,7 +121,7 @@ h1 {
 .form-select {
 	display: inline;
 	background: rgba(255,255,255,0.25);
-	border-radius: 10rem;
+	border-radius: 2px;
 	height: 6.5rem;
 	line-height: 6.5rem;
 	margin: 0 3rem;
@@ -111,7 +129,8 @@ h1 {
 	position: relative;
 	width: 47.5rem;
 	color: white;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
+	font-size: 24px;
 }
 
 /* Rodapé
