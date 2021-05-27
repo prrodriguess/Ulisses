@@ -23,6 +23,7 @@ class TransactionsController < ApplicationController
       end
 
       def show
+        @body_image = "body-image-transaction"
         @transaction = Transaction.find(params[:id])
       end
 
