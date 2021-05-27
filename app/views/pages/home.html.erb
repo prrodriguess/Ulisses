@@ -2,15 +2,26 @@
         <div class="container align-self-center"><!-- inicio container -->
           <div class="row"> <!-- inicio row -->
             <div class="col-md-12 capa">
-              <h1 id="effect">Assuma o controle.<br>
-              Seja seu próprio ídolo.</h1>
+              <h1 id="effect">Assuma o controle.<br>Seja seu próprio ídolo.</h1>
 
-                  <form method="GET" action="<%= current_user.present? ? new_goal_path : new_goal_path %>">
+              <form method="GET" action="<%= current_user.present? ? new_goal_path : new_goal_path %>">
                     <div class="dropdown_goal">
                       <input type="text" id="goal" name="goal" class="form-select form-select-lg mb-3">
                     </div>
-                    <input type="submit" class="btn-custom mt-4" value="Assumir compromisso">
-            </form>
+                    <%= link_to content_tag(:span, 'Ir agora'), new_goal_path, class:'new-b' %>
+
+                    <script>
+                      const btn = document.querySelector('.new-b');
+                      btn.onmousemove = function(e){
+                        const x = e.pageX - btn.offsetLeft;
+                        const y = e.pageY - btn.offsetTop;
+
+                        btn.style.setProperty('--x', x + 'px');
+                        btn.style.setProperty('--y', y + 'px');
+                      }
+                    </script>
+
+              </form>
             </div>
           </div><!-- fim row -->
         </div> <!-- fim container -->

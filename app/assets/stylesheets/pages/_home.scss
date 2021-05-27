@@ -52,14 +52,57 @@ h1 {
 	text-align: center
 }
 
-.btn-custom {
-	// background-color: orange;
-	// color: white;
-	// border-radius: 500px;
-	// text-transform: uppercase;
-	// transition: 0.4s, color 0.4s;
-	// padding: 10px 20px;
-	// margin: 0 auto;
+.new-b, .new-ba {
+	position: relative;
+	display: inline-flex;
+	padding: 10px 30px;
+	background: #363636;
+	color: #fff !important;
+	font-size: 20pt;
+	text-decoration: none;
+	letter-spacing: 1px;
+	overflow: hidden;
+}
+
+.new-b span, .new-ba span {
+	position: relative;
+	z-index: 1;
+}
+
+.new-b::before{
+	content: '';
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	background: #2196f3;
+	transition: width 0.8s, height 0.8s;
+}
+
+.new-ba::before {
+	content: '';
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	background: #FF4742;
+	transition: width 0.8s, height 0.8s;
+}
+
+.new-b:hover:before {
+	width: 300px;
+	height: 300px;
+}
+
+.new-ba:hover:before {
+	width: 300px;
+	height: 300px;
 }
 
 .btn-branco {
