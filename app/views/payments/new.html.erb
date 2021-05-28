@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-12 text-center mt-4">
-      <h2 class="display-4 text-center mt-3 mb-5">Se eu, <strong class="text-primary"><%= current_user.name %></strong>, não cumprir minha meta dentro do prazo, vou pagar <strong class="text-danger"><%= humanized_money_with_symbol @transaction.amount %></strong></h2>
+      <h2 class="display-4 text-center mt-3 mb-5">Se eu, <strong class="text-primary"><%= current_user.name %></strong>, não cumprir minha meta dentro do prazo, vou pagar <strong class="text-danger"><%= humanized_money_with_symbol @goal.penalty %></strong></h2>
       <p class="mb-5">Vou alcançar minha meta agora!</p>
       <div class="text-center">
         <button id="pay" class="btn btn-primary">Assumir compromisso</button>
@@ -12,7 +12,7 @@
         paymentButton.addEventListener('click', () => {
           const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
           stripe.redirectToCheckout({
-            sessionId: '<%= @transaction.checkout_session_id %>'
+            sessionId: '<%= @goal.checkout_session_id %>'
           });
         });
       </script>
