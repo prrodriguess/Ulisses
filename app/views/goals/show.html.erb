@@ -21,7 +21,6 @@
                 </div>
             </div>
         </div>
-            <%= render "shared/formTransaction" %>
             <%= link_to "Ver minhas metas", goals_path, class: 'btn btn-primary' %>
             <%# <%= link_to 'Remover', goal_path(@goal), method: :delete, class: 'btn btn-danger', data: { confirm: "Você ainda tem #{(@goal.deadline - Date.current).to_i} dias para perder #{@goal.current - @goal.desired}kg. \nNão desista! \nSe desistir agora, você pagará uma multa de R$#{@goal.price * 0.25}. \nVocê tem certeza que deseja deletar esta meta?" } %>
             <%= link_to "Home", root_path, class: 'btn btn-primary' %>

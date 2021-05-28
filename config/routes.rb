@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  resources :goals
-  root to: 'pages#home'
-  get 'new_transaction' => 'transactions#create'
-  resources :transactions, only: [:show, :create] do
+  resources :goals do
     resources :payments, only: :new
   end
+  
+  # get 'new_transaction' => 'transactions#create'
+  root to: 'pages#home'
 end
