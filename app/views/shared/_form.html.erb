@@ -17,18 +17,8 @@
 
       <div class="form-group row mb-0">
         <div class="col-sm-4 offset-sm-4">
-          <%= f.button :submit, :value => "Assumir compromisso", class: "new-ba" %>
+          <%= f.button :submit, :value => "Assumir compromisso", class: "new-b" %>
 
-            <script>
-                const btn = document.querySelector('.new-ba');
-                btn.onmousemove = function(e){
-                  const x = e.pageX - btn.offsetLeft;
-                  const y = e.pageY - btn.offsetTop;
-
-                  btn.style.setProperty('--x', x + 'px');
-                  btn.style.setProperty('--y', y + 'px');
-                }
-            </script>
         </div>
     <% end %>
     </div>

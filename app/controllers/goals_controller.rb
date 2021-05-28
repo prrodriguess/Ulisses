@@ -30,6 +30,10 @@ class GoalsController < ApplicationController
   def show
     @body_image = "body-image-show"
     @goal = Goal.find(params[:id])
+    if Transaction.where(goal: @goal).count.zero?
+      redirect_to new_transaction_path(goal_id: @goal.id)
+      return
+    end
   end
 
   def update

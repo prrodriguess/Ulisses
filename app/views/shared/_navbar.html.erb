@@ -12,6 +12,7 @@
               <ul class="navbar-nav ml-auto">
                 <% if user_signed_in? %>
                   <%= link_to "Minhas Metas", goals_path, class: "nav-link mr-4" %>
+                  <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link mr-4" %>
                   <!-- <li class="nav-item active">
                     <%#= link_to "Entrar", new_user_session_path, class: "nav-link" %>
                   </li>
