@@ -152,6 +152,7 @@ h1 {
 	color: white;
 }
 
+
 .video {
 	padding: 10px 0;
 }
@@ -168,17 +169,23 @@ h1 {
 	width: 47.5rem;
 	color: gray;
 	margin-bottom: 25px;
-	font-size: 24px;
+	font-size: 58px;
+  text-align: center;
 }
 input#goal::placeholder 
 {
 	color:#AAA;
+  text-align: center;
 }
 
 .mx-1 {
 	margin: 5px 0 10px 0 !important;
 }
 
+.form-select:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
 
 /* Rodapé
 ---------------------*/
