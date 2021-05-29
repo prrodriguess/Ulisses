@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h2>Parabéns!</h2> 
+      <br>
+      <h2>Você acaba de assumir um compromisso com seu futuro.</h2>
+      <%# <ul class="list-unstyled"> %>
+        <%# <li><strong>Penalidade</strong> <%= @transaction.created_at.to_date %></li>
+        <%# <li><strong>Prazo</strong> <%= humanized_money_with_symbol @goal.deadline %></li>
+        <%# <li><strong>Penalidade</strong> <%= humanized_money_with_symbol @transaction.amount %></li> %>
+        <%# <li><strong>Prazo</strong> <%= @transaction.goal.goals_title %></li>
+        <%# <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @transaction.amount %></li>
+        <%# </li> %>
+      <%# </ul> %>
+      <%# <p>Estimated delivery in <strong>2 business days</strong></p> %>
+      <%# <%= link_to "Minhas metas", weight_goals_path, class: 'btn btn-primary' %>
+      <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+      <%= link_to "Minhas Metas", goals_path, class: 'btn btn-primary' %>
+      <%= link_to "Criar Nova Meta", new_goal_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

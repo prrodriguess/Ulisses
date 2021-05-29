@@ -38,6 +38,7 @@ body{
 .body-image-weigth-goals {
 	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(new_page.png) no-repeat;
 	background-attachment: fixed;
+	background-size: 100%;
 }
 
 
@@ -80,6 +81,7 @@ h1 {
 	text-decoration: none;
 	letter-spacing: 1px;
 	overflow: hidden;
+	margin: 20px 0 20px 0;
 }
 
 .new-b span, .new-ba span {
@@ -97,7 +99,7 @@ h1 {
 	width: 0px;
 	height: 0px;
 	background: #2196f3;
-	transition: width 0.8s, height 0.8s;
+	//transition: width 0.8s, height 0.8s;
 }
 
 .new-ba::before {
@@ -150,20 +152,14 @@ h1 {
 	color: white;
 }
 
+
 .video {
 	padding: 10px 0;
 }
 
-.rotacionar {
-	transform: rotate(30deg);
-	padding-left: 80px;
-	padding-top: 20px;
-}
-
-
 .form-select {
 	display: inline;
-	background: rgba(255,255,255,0.25);
+	background: rgba(255,255,255,0.9);
 	border-radius: 2px;
 	height: 6.5rem;
 	line-height: 6.5rem;
@@ -171,9 +167,24 @@ h1 {
 	padding: 0 3rem;
 	position: relative;
 	width: 47.5rem;
-	color: white;
+	color: gray;
 	margin-bottom: 25px;
-	font-size: 24px;
+	font-size: 58px;
+  text-align: center;
+}
+input#goal::placeholder 
+{
+	color:#AAA;
+  text-align: center;
+}
+
+.mx-1 {
+	margin: 5px 0 10px 0 !important;
+}
+
+.form-select:focus {
+  outline: 0;
+  box-shadow: none !important;
 }
 
 /* Rodapé
@@ -229,7 +240,7 @@ p {
 }
 
 @media (max-width: 576px) {
-	.btn-custom {
+	.new-b {
 		margin: 10px 15px;
 		font-size: 1em;
 	}

@@ -1,31 +1,31 @@
-<div class="container mt-5">
+<div id="container">
   <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mt-5 bg-white rounded">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mt-5">
       <div class="text-center mt-3 mb-3">
         <h4>Minhas Metas - Perda de Peso</h4>
       </div>
         <ul>
           <% @goals.each do |goal| %>
             <div class="col-6 col-md-6 mt-5">
-              <div class="card">
-                <div class="card-body">
+              <div>
+                <div class="body">
                   <%# <h5 class="card-title"><%= goal.title %></h5>
                   <%# <p class="card-text">Peso atual: <%= goal.current %></p>
                   <%# <p class="card-text">Meta: <%= goal.desired %></p>
                   <p class="card-text">Tempo restante: <%= (goal.deadline - Date.today).to_i %> dia(s)</p>
-                  <p class="card-text">Penalidade: <%= number_to_currency(goal.penalty, unit: "R$", separator: ",", delimiter: ".")%> </p>
+                  <p class="text">Penalidade: <%= number_to_currency(goal.penalty, unit: "R$", separator: ",", delimiter: ".")%> </p>
                   <%= link_to "Detalhes", goal_path(goal.id), class: "btn btn-primary" %>
                   <%= link_to "Remover", goal_path(goal.id), method: :delete, 'data-toggle' => 'modal', 'data-target' => '#modal_delete' %>
-                    data: { confirm: "Você ainda tem 10 dias para perder 20kg.
+                    <%# data: { confirm: "Você ainda tem 10 dias para perder 20kg.
                     #\nNão desista! \nSe desistir agora, você pagará uma multa de #{number_to_currency(goal.penalty * 0.25, unit: "R$", separator: ",", delimiter: ".")}.
-                     #\nVocê tem certeza que deseja deletar esta meta?" } %> -->
+                     #\nVocê tem certeza que deseja deletar esta meta?" } %>
                 </div>
               </div>
             </div>
           <% end %>
         </ul>
-      <%= link_to "Criar nova meta", new_goal_path, class: 'btn btn-primary' %>
-      <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+      <%= link_to "Criar nova meta", new_goal_path, class: 'new-b' %>
+      <%= link_to "Home", root_path, class: 'new-b' %>
     </div>
   </div>
 </div>

@@ -1,8 +1,8 @@
 class GoalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :new ]
+  skip_before_action :authenticate_user!, only: [:home, :new]
+  before_action :store_url, only: [:new]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
   before_action :set_user
-  before_action :set_transaction, only: [:destroy]
 
   def index
     @body_image = "body-image-index"
@@ -13,15 +13,40 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     @goal.user_id = @user.id
     if @goal.save
-      redirect_to goal_path(@goal)
+      # redirect_to goal_path(@goal)
+
+      # goal = Goal.find(params[:goal_id])
+      @goal.state = 'pending'
+      @goal.user = current_user
+      # goal = Goal.create!(state: 'pending', user: current_user)
+    
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          name: current_user.name,
+          amount: @goal.penalty * 100,
+          currency: 'brl',
+          quantity: '1',
+          description: "Você só será cobrado se não cumprir sua meta dentro do prazo."
+        }],
+        success_url: request.base_url + "/congratulations",
+        cancel_url: goal_url(@goal)
+      )
+    
+      @goal.update(checkout_session_id: session.id)
+      redirect_to new_goal_payment_path(@goal)
     else
       render "new"
     end
+
   end
 
   def new
-    @body_image = "body-image-weigth-goals"
-    @goal = Goal.new(title: params[:goal])
+    unless current_user.present? 
+      redirect_to new_user_session_path
+    end
+      @body_image = "body-image-weigth-goals"
+      @goal = Goal.new(title: params[:goal])
   end
 
   def edit
@@ -30,10 +55,10 @@ class GoalsController < ApplicationController
   def show
     @body_image = "body-image-show"
     @goal = Goal.find(params[:id])
-    if Transaction.where(goal: @goal).count.zero?
-      redirect_to new_transaction_path(goal_id: @goal.id)
-      return
-    end
+    # if Transaction.where(goal: @goal).count.zero?
+    #   redirect_to new_transaction_path(goal_id: @goal.id)
+    #   return
+    # end
   end
 
   def update
@@ -42,12 +67,15 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @transaction.destroy
     @goal.destroy
     redirect_to goals_path
   end
 
   private
+
+  def store_url
+    session["redirect_to"] = request.original_url
+  end
 
   def set_goal
     @goal = Goal.find(params[:id])
@@ -55,10 +83,6 @@ class GoalsController < ApplicationController
 
   def set_user
     @user = current_user
-  end
-
-  def set_transaction
-    @transaction = Transaction.find(params[:id])
   end
 
   def goal_params

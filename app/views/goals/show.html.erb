@@ -1,9 +1,9 @@
-<div class="container mt-5">
+<div id="container-box">
     <div class="row">
-        <div class="col-sm-8 p-3 ml-3 bg-white">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h2 class="card-title"><%= @goal.title %> </h2>
+        <div class="col-sm-8 p-3 ml-3">
+        <div class="mb-3">
+            <div class="body">
+                <h2 class="title"><%= @goal.title %> </h2>
                 <div class="flexbox">
                 </div>
                 <p><%=  %></p><br>
@@ -13,7 +13,6 @@
                 </div>
             </div>
         </div>
-            <%= render "shared/formTransaction" %>
             <%= link_to "Ver minhas metas", goals_path, class: 'btn btn-primary' %>
             <%# <%= link_to 'Remover', goal_path(@goal), method: :delete, class: 'btn btn-danger', data: { confirm: "Você ainda tem #{(@goal.deadline - Date.current).to_i} dias para perder #{@goal.current - @goal.desired}kg. \nNão desista! \nSe desistir agora, você pagará uma multa de R$#{@goal.price * 0.25}. \nVocê tem certeza que deseja deletar esta meta?" } %>
             <%= link_to "Home", root_path, class: 'btn btn-primary' %>
