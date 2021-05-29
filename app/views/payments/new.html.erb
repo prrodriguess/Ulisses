@@ -1,11 +1,11 @@
-<div class="container mt-5">
+<div id="container">
   <div class="row justify-content-center">
     <div class="col-12 text-center mt-4">
       <h2 class="display-4 text-center mt-3 mb-5">Se eu, <strong class="text-primary"><%= current_user.name %></strong>, não cumprir minha meta dentro do prazo, vou pagar <strong class="text-danger"><%= humanized_money_with_symbol @goal.penalty %></strong></h2>
       <p class="mb-5">Vou alcançar minha meta agora!</p>
       <div class="text-center">
-        <button id="pay" class="btn btn-primary">Assumir compromisso</button>
-      </div>
+        <button id="pay" class="new-b">Assumir compromisso</button>
+      </div> 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');

@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :new ]
+  skip_before_action :authenticate_user!, only: [:home, :new]
+  before_action :store_url, only: [:new]
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
   before_action :set_user
 
@@ -42,8 +43,11 @@ class GoalsController < ApplicationController
   end
 
   def new
-    @body_image = "body-image-weigth-goals"
-    @goal = Goal.new(title: params[:goal])
+    unless current_user.present? 
+      redirect_to new_user_session_path
+    end
+      @body_image = "body-image-weigth-goals"
+      @goal = Goal.new(title: params[:goal])
   end
 
   def edit
@@ -69,6 +73,10 @@ class GoalsController < ApplicationController
   end
 
   private
+
+  def store_url
+    session["redirect_to"] = request.original_url
+  end
 
   def set_goal
     @goal = Goal.find(params[:id])
