@@ -1,0 +1,47 @@
+<header> <!-- inicio navbar -->
+        <nav class="navbar navbar-expand-md navbar-ligth navbar-transparente">
+          <div class="container">
+            <a href="#" class="navbar-brand"></a>
+              <h3 class="text-white">Ulisses</h3>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-principal" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars text-white"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-principal">
+              <ul class="navbar-nav ml-auto">
+                <% if user_signed_in? %>
+                  <%= link_to "Home", root_path, class: "nav-link mr-4" %>
+                  <%= link_to "Minhas Metas", goals_path, class: "nav-link mr-4" %>
+                  <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link mr-4" %>
+                  <!-- <li class="nav-item active">
+                    <%#= link_to "Entrar", new_user_session_path, class: "nav-link" %>
+                  </li>
+                  <li class="nav-item">
+                    <%#= link_to "Registre-se", new_user_registration_path, class: "nav-link" %>
+                  </li> -->
+                  <li class="nav-item dropdown">
+                    
+                    <span class="text-white">Bem vindo, <%= current_user.name %></span> 
+                    <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1610205439/ifpvie9oidupwyedtkzm.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <%= link_to "Action", "#", class: "dropdown-item" %>
+                      <%= link_to "Another action", "#", class: "dropdown-item" %>
+                      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                    </div>
+                  </li>
+              <% else %>
+                  <li class="nav-item">
+                    <%= link_to "Entrar", new_user_session_path, class: "nav-link" %>
+                  </li>
+                  <li>
+                    <%= link_to "Registre-se", new_user_registration_path, class: "nav-link" %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header> <!-- fim navbar -->
+
+
