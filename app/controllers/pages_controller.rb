@@ -4,4 +4,6 @@ class PagesController < ApplicationController
   def home
   	@body_image = "body-image-home"
   end
+
+  def congratulations;end
 end

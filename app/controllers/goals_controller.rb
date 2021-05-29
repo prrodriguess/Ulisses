@@ -64,7 +64,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal.update(goal_params)
-    redirect_to goal_path(@goal)
+    redirect_to goal_payment_path(@goal)
   end
 
   def destroy
