@@ -30,7 +30,7 @@ body{
 }
 
 .body-image-home {
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(bg_home.png) no-repeat;
+	background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(bg_home.png) no-repeat;
 	background-attachment: fixed;
 	background-size: 100%;
 }
@@ -81,6 +81,7 @@ h1 {
 	text-decoration: none;
 	letter-spacing: 1px;
 	overflow: hidden;
+	border: none;
 	margin: 20px 0 20px 0;
 }
 
