@@ -19,23 +19,22 @@ class GoalsController < ApplicationController
       @goal.state = 'pending'
       @goal.user = current_user
       # goal = Goal.create!(state: 'pending', user: current_user)
-      goal = @goal
     
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
           name: current_user.name,
-          amount: goal.penalty * 100,
+          amount: @goal.penalty * 100,
           currency: 'brl',
           quantity: '1',
           description: "Você só será cobrado se não cumprir sua meta dentro do prazo."
         }],
-        success_url: goal_url(goal),
-        cancel_url: goal_url(goal)
+        success_url: request.base_url + "/congratulations",
+        cancel_url: goal_url(@goal)
       )
     
-      goal.update(checkout_session_id: session.id)
-      redirect_to new_goal_payment_path(goal)
+      @goal.update(checkout_session_id: session.id)
+      redirect_to new_goal_payment_path(@goal)
     else
       render "new"
     end
@@ -64,7 +63,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal.update(goal_params)
-    redirect_to goal_payment_path(@goal)
+    redirect_to goal_path(@goal)
   end
 
   def destroy
