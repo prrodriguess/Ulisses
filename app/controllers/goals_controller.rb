@@ -30,8 +30,9 @@ class GoalsController < ApplicationController
           description: "Você só será cobrado se não cumprir sua meta dentro do prazo."
         }],
         success_url: request.base_url + "/congratulations",
-        cancel_url: goal_url(@goal)
-      )
+        cancel_url: goal_url(@goal),
+        customer_email: current_user.email
+      ) 
     
       @goal.update(checkout_session_id: session.id)
       redirect_to new_goal_payment_path(@goal)
@@ -86,6 +87,6 @@ class GoalsController < ApplicationController
   end
 
   def goal_params
-    params.require(:goal).permit(:deadline, :penalty, :title)
+    params.require(:goal).permit(:deadline, :penalty, :title, :referee)
   end
 end
