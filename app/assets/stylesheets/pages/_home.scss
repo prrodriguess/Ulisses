@@ -7,40 +7,6 @@ body{
 	font-family: 'Bebas Neue', cursive;
 }
 
-.body-image-transaction {
-	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(transaction.png) no-repeat;
-	background-attachment: fixed;
-}
-
-.body-image-transaction-new {
-	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(transaction_page.png) no-repeat;
-	background-attachment: fixed;
-	background-size: 100%;
-}
-
-.body-image-index {
-	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(index_page.png) no-repeat;
-	background-attachment: fixed;
-	background-size: 100%;
-}
-
-.body-image-show {
-	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(show_page.png) no-repeat;
-	background-attachment: fixed;
-}
-
-.body-image-home {
-	background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(bg_home.png) no-repeat;
-	background-attachment: fixed;
-	background-size: 100%;
-}
-
-.body-image-weigth-goals {
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(new_page.png) no-repeat;
-	background-attachment: fixed;
-	background-size: 100%;
-}
-
 
 h1 {
 	margin: 0;
@@ -71,69 +37,6 @@ h1 {
 	text-align: center
 }
 
-.new-b, .new-ba {
-	position: relative;
-	display: inline-flex;
-	padding: 10px 30px;
-	background: rgb(251, 80, 18);
-	color: #fff !important;
-	font-size: 20pt;
-	text-decoration: none;
-	letter-spacing: 1px;
-	overflow: hidden;
-	border: none;
-	margin: 20px 0 20px 0;
-}
-
-.new-b span, .new-ba span {
-	position: relative;
-	z-index: 1;
-}
-
-.new-b::before{
-	content: '';
-	position: absolute;
-	top: var(--y);
-	left: var(--x);
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	background: #2196f3;
-	//transition: width 0.8s, height 0.8s;
-}
-
-.new-ba::before {
-	content: '';
-	position: absolute;
-	top: var(--y);
-	left: var(--x);
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	background: #FF4742;
-	transition: width 0.8s, height 0.8s;
-}
-
-.new-b:hover:before {
-	width: 300px;
-	height: 300px;
-}
-
-.new-ba:hover:before {
-	width: 300px;
-	height: 300px;
-}
-
-.btn-branco {
-	border: 2px solid white;
-}
-
-.btn-branco:hover {
-	background-color: white;
-	color: black;
-}
 
 /* Estrutura conteudos
 --------------------*/

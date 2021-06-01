@@ -1,13 +1,12 @@
-  <%= render 'shared/navbar' %>
-    <section id="home" class="d-flex" style="margin-top: 60px"> <!-- home -->
+    <section id="home" class="d-flex"> <!-- home -->
         <div class="container align-self-center"><!-- inicio container -->
           <div class="row"> <!-- inicio row -->
             <div class="col-md-12 capa">
               <h1 id="effect">Assuma o controle.<br>Seja seu próprio ídolo.</h1>
 
-              <form method="GET" action="<%= new_goal_path %>">
+              <form method="GET" action="<%=  new_goal_path  %>">
                     <div class="dropdown_goal">
-                      <input type="text" id="goal" name="goal" class="form-select form-select-lg mb-3" placeholder="Qual é a sua meta?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Qual é a sua meta?'">
+                      <input type="text" id="goal" name="goal" class="form-select form-select-lg mb-3" placeholder="Qual é a sua meta?">
                     </div>
                     <input type="submit" class="new-b" value="Assumir compromisso">
 
