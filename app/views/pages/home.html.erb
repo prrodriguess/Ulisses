@@ -6,7 +6,7 @@
 
               <form method="GET" action="<%=  new_goal_path  %>">
                     <div class="dropdown_goal">
-                      <input type="text" id="goal" name="goal" class="form-select form-select-lg mb-3" placeholder="Qual é a sua meta?">
+                      <input type="text" id="goal" name="goal" class="form-select form-select-lg mb-3" placeholder="Qual é a sua meta?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Qual é a sua meta?'">
                     </div>
                     <input type="submit" class="new-b" value="Assumir compromisso">
               </form>
