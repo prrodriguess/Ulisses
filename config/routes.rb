@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get 'congratulations' => 'pages#congratulations'
   root to: 'pages#home'
 
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
 end

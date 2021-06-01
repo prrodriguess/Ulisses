@@ -1,27 +1,33 @@
 <%= render 'shared/navbar2' %>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-10 bg-white p-3 mt-5">
-        <div class="mb-3">
-            <div>
-                <div id="clock"></div>
-            </div>
-            <script>
-                src="https://code.jquery.com/jquery-3.6.0.js"
-                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-                crossorigin="anonymous">
-            </script>
-            <div class="body">
-                <h2 class="title"><%= @goal.title %> </h2>
-                <div class="flexbox">
-                </div>
-                <p><%=  %></p><br>
-                <p>Sua penalidade é: <br><br><%= humanized_money_with_symbol(@goal.penalty) %></p>
-                <p>Progresso Mensal</p>
-            </div>
-        </div>
-            <%= link_to "Ver minhas metas", goals_path, class: 'btn btn-primary' %>
-            <%= link_to "Home", root_path, class: 'btn btn-primary' %>
-        </div>
+
+<div class="container rounded-3 p-4">
+  <div class="row">
+    <div class="col bg-white text-center p-3">
+        <h4>Tempo Restante</h4>
+        <h2 id="countdown" class=" text-center text-dark rounded-3"></h2>
     </div>
+    <div class="col bg-info p-3 text-center">
+        <h2 class="text-center text-dark"><%= @goal.title%></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col bg-danger text-center text-white p-3">
+        <h1>Penalidade</h1>
+        <h2 clas="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
+    </div>
+    <div class="col bg-dark text-center p-3">
+      <h2 class="text-white text-center">Reveja suas metas</h2>
+        <h1><%= link_to "Ver minhas metas", goals_path, class: 'btn btn-info btn-lg'%></h1>
+    </div>
+    <div class="col bg-white text-center p-3">
+        <h2 class="text-center text-dark"> + desafio</h2>
+        <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
+    </div>
+  </div>
 </div>
+    <%# EXEMPLO DE STIMULUS IN RAILS %>
+
+    <%# <%= content_tag :div, nil, data: {controller: "hello"} do %>
+        <%# <h1 data-target="hello.heading">This is the home page</h1> %>
+        <%# <div class="btn btn-primary" data-action="click->hello#greet">Say Hello</div> %>
+    <%# <% end %>
