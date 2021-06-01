@@ -1,5 +1,4 @@
-<div id="home">
-  <div id="container">
+<div id="container-new">
     <%= simple_form_for @goal,
       wrapper: :horizontal_form,
       wrapper_mappings: {
@@ -10,9 +9,10 @@
       } do |f| %>
 
       <div class="p-3">
-            <%= f.input :title, :label => 'Título', :placeholder => 'Minha Meta' %>
-            <%= f.input :deadline, :label => "Prazo", :placeholder => '70' %>
+            <%= f.input :title, :label => 'O Que Vou Fazer?', :placeholder => 'Minha Meta' %>
+            <%= f.input :deadline, :label => "Até Quando?", :placeholder => '70' %>
             <%= f.input :penalty, :label => "Penalidade (R$)", :placeholder => '1000' %>
+            <%= f.input :referee, :label => "E-mail do Árbitro", :placeholder => 'Alguém para verficar se sua meta foi cumprida' %>
       </div>
 
       <div class="form-group row mb-0">
@@ -22,5 +22,4 @@
         </div>
     <% end %>
     </div>
-  </div>
 </div>
