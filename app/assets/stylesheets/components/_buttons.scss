@@ -12,45 +12,8 @@
 	margin: 20px 0 20px 0;
 }
 
-.new-b span, .new-ba span {
-	position: relative;
-	z-index: 1;
-}
-
-.new-b::before{
-	content: '';
-	position: absolute;
-	top: var(--y);
-	left: var(--x);
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	background: #2196f3;
-	//transition: width 0.8s, height 0.8s;
-}
-
-.new-ba::before {
-	content: '';
-	position: absolute;
-	top: var(--y);
-	left: var(--x);
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	width: 0px;
-	height: 0px;
-	background: #FF4742;
-	transition: width 0.8s, height 0.8s;
-}
-
-.new-b:hover:before {
-	width: 300px;
-	height: 300px;
-}
-
-.new-ba:hover:before {
-	width: 300px;
-	height: 300px;
+.new-b:hover {
+	color: #9bf0e1;
 }
 
 .btn-branco {
