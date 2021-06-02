@@ -10,9 +10,9 @@
 
       <div class="p-3">
             <%= f.input :title, :label => 'O Que Vou Fazer?', :placeholder => 'Minha Meta' %>
-            <%= f.input :deadline, :label => "Até Quando?", :placeholder => '70' %>
+            <%= f.input :deadline, :label => "Até Quando?", :placeholder => '70', :as => :date, :order => [:day, :month, :year] %>
             <%= f.input :penalty, :label => "Penalidade (R$)", :placeholder => '1000' %>
-            <%= f.input :referee, :label => "E-mail do Árbitro", :placeholder => 'Alguém para verficar se sua meta foi cumprida' %>
+            <%= f.input :referee, :label => "E-mail do Árbitro", :placeholder => 'Alguém para verificar se sua meta foi cumprida' %>
       </div>
 
       <div class="form-group row mb-0">
