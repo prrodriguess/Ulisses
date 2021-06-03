@@ -11,8 +11,21 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
+      # --------------- MAILER EM CONTRUÇÃO --------------------
+
+    @restaurant = current_user.restaurants.build(restaurant_params)
+    
+    # ------------------- ATÉ AQUI -------------------------
     @goal.user_id = @user.id
     if @goal.save
+      # --------------- MAILER EM CONTRUÇÃO --------------------
+
+      mail = GoalMailer.with(goal: @goal).create_confirmation
+      mail.deliver_now
+      redirect_to goal_path(@goal)
+
+      # ------------------- ATÉ AQUI -------------------------
+
       # redirect_to goal_path(@goal)
 
       # goal = Goal.find(params[:goal_id])
