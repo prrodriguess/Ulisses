@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col bg-white text-center p-3">
         <h4>Tempo Restante</h4>
-        <h2 id="countdown" class=" text-center text-dark rounded-3"></h2>
+        <h2 attr-deadline="<%= @goal.deadline %>" id="countdown" class=" text-center text-dark rounded-3"></h2>
     </div>
     <div class="col bg-info p-3 text-center">
         <h2 class="text-center text-dark"><%= @goal.title%></h2>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col bg-danger text-center text-white p-3">
         <h1>Penalidade</h1>
-        <h2 clas="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
+        <h2 class="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
     </div>
     <div class="col bg-dark text-center p-3">
       <h2 class="text-white text-center">Reveja suas metas</h2>
@@ -25,6 +25,7 @@
     </div>
   </div>
 </div>
+
     <%# EXEMPLO DE STIMULUS IN RAILS %>
 
     <%# <%= content_tag :div, nil, data: {controller: "hello"} do %>
