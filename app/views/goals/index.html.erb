@@ -5,10 +5,11 @@
       <div class="text-center mt-3 mb-3">
         <h4>Minhas Metas - Perda de Peso</h4>
       </div>
-        <ul>
-          <% @goals.each do |goal| %>
-            <div class="col-6 col-md-6 mt-5">
-              <div>
+        
+          <div><% @goals.each do |goal| %>
+            <ul>
+              <div class="col-6 col-md-6 mt-5">
+                <div>
                 <div class="body">
                   <%# <h5 class="card-title"><%= goal.title %></h5>
                   <%# <p class="card-text">Peso atual: <%= goal.current %></p>
@@ -23,10 +24,22 @@
                 </div>
               </div>
             </div>
+          </ul>
           <% end %>
-        </ul>
+        </div>
+        
       <%= link_to "Criar nova meta", new_goal_path, class: 'new-b' %>
       <%= link_to "Home", root_path, class: 'new-b' %>
     </div>
   </div>
+</div>
+
+
+<div class="container">
+<%= month_calendar(events: @goals, attribute: :deadline) do |date, goals| %>
+  <%= date %>
+  <% goals.each do |goal| %>
+  <span><%= goal.title %></span>
+  <% end  %>
+<% end %>
 </div>
