@@ -10,7 +10,12 @@
 
       <div class="p-3">
             <%= f.input :title, :label => 'O Que Vou Fazer?', :placeholder => 'Minha Meta' %>
-            <%= f.input :deadline, :label => "Até Quando?", :placeholder => '70', :as => :date, :order => [:day, :month, :year] %>
+            <div class="form-group row">
+              <label for="goal_dealine" class="col-3 col-form-label">Até Quando</label>
+            <div class="col-9">
+              <input class="form-control" type="date" name="goal[deadline]" value="2011-08-19" id="goal_dealine">
+            </div>  
+            </div>
             <%= f.input :penalty, :label => "Penalidade (R$)", :placeholder => '1000' %>
             <%= f.input :referee, :label => "E-mail do Árbitro", :placeholder => 'Alguém para verificar se sua meta foi cumprida' %>
       </div>

@@ -34,12 +34,3 @@
   </div>
 </div>
 
-
-<div class="container">
-<%= month_calendar(events: @goals, attribute: :deadline) do |date, goals| %>
-  <%= date %>
-  <% goals.each do |goal| %>
-  <span><%= goal.title %></span>
-  <% end  %>
-<% end %>
-</div>

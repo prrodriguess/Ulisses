@@ -3,6 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
+
+
 //= require jquery 
 //= require jquery_ujs
 import {} from 'jquery-ujs'
@@ -11,6 +14,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'controllers'
+
 
 Rails.start()
 Turbolinks.start()
@@ -24,6 +28,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -52,4 +57,6 @@ import "bootstrap";
       //});
   // Call your functions here, e.g:
   // initSelect2();
+  
+  
 
