@@ -48,7 +48,6 @@ class GoalsController < ApplicationController
       ) 
     
       @goal.update(checkout_session_id: session.id)
-      User.create(email: @goal.referee, password: "123456", referee: true)
       redirect_to new_goal_payment_path(@goal)
     else
       render "new"
