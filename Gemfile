@@ -33,7 +33,7 @@ gem 'stripe'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
-gem "simple_calendar", "~> 2.4"
+gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'faker'
 gem 'execjs', '2.7.0'
