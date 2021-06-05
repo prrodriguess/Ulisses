@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :goals do
+    get 'done' => 'goals#done'
     resources :payments, only: [:new, :show]
   end
   
