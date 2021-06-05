@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     @goal.user_id = @user.id
     if @goal.save
-      GoalMailer.with(goal: @goal).new_goal_email.deliver_later
+      GoalMailer.with(goal: @goal).new_goal_email.deliver_now
       # redirect_to goal_path(@goal)
 
       # goal = Goal.find(params[:goal_id])
