@@ -1,10 +1,7 @@
-class RestaurantMailer < ApplicationMailer
-    def create_confirmation
-      @goal = params[:goal]
-  
-      mail(
-        to:       @goal.user.email,
-        subject:  "Olá #{@user.name}, você foi convidado a ser árbitro."
-      )
-    end
-  end
+class GoalMailer < ApplicationMailer
+    def new_order_email
+        @goal = params[:goal]
+    
+        mail(to: 'ulissesdemo21@gmail.com', subject: "You got a new goal!")
+      end
+end

@@ -11,21 +11,9 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
-      # --------------- MAILER EM CONTRUÇÃO --------------------
-
-    @restaurant = current_user.restaurants.build(restaurant_params)
-    
-    # ------------------- ATÉ AQUI -------------------------
     @goal.user_id = @user.id
     if @goal.save
-      # --------------- MAILER EM CONTRUÇÃO --------------------
-
-      mail = GoalMailer.with(goal: @goal).create_confirmation
-      mail.deliver_now
-      redirect_to goal_path(@goal)
-
-      # ------------------- ATÉ AQUI -------------------------
-
+      GoalMailer.with(goal: @goal).new_goal_email.deliver_later
       # redirect_to goal_path(@goal)
 
       # goal = Goal.find(params[:goal_id])
@@ -46,10 +34,12 @@ class GoalsController < ApplicationController
         cancel_url: goal_url(@goal),
         customer_email: current_user.email
       ) 
-    
+      
+      flash[:success] = "Thank you for your wishes! We'll get contact you soon!"
       @goal.update(checkout_session_id: session.id)
       redirect_to new_goal_payment_path(@goal)
     else
+      flash.now[:error] = "Your mailer form had some errors. Please check the form and resubmit."
       render "new"
     end
 
