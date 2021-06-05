@@ -5,5 +5,7 @@ class PagesController < ApplicationController
   	@body_image = "body-image-home"
   end
 
-  def congratulations;end
+  def congratulations
+  	@body_image = "body-image-congratulations"
+  end
 end

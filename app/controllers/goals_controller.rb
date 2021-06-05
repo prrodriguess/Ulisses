@@ -10,7 +10,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.new(goal_params)
+    #@goal = Goal.new(goal_params)
       # --------------- MAILER EM CONTRUÇÃO --------------------
 
     # @restaurant = current_user.restaurants.build(restaurant_params)
