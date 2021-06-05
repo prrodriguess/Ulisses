@@ -1,0 +1,11 @@
+<div class="col-sm-4 offset-sm-4">
+    <h1>Você é o arbitro do <%= @user.name %>, ele cumpriu a meta ?</h1>
+    <%= f.button :submit, :value => "Sim", class: "new-b" %>
+</div>
+
+<form action="<%=  @goal.done  %>">
+    <div class="dropdown_goal">
+        <input class="btn btn-primary" placeholder="Sim" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Qual é a sua meta?'">
+    </div>
+    <input type="submit" class="new-b" value="Assumir compromisso">
+</form>

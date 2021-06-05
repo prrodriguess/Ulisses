@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :new]
   before_action :store_url, only: [:new]
-  before_action :set_goal, only: [:show, :edit, :update, :destroy]
+  before_action :set_goal, only: [:show, :edit, :update, :destroy, :done]
   before_action :set_user
 
   def index
@@ -73,6 +73,14 @@ class GoalsController < ApplicationController
   def destroy
     @goal.destroy
     redirect_to goals_path
+  end
+
+  def done
+    @goal.done = true
+    @goal.save
+  end
+
+  def failed
   end
 
   private
