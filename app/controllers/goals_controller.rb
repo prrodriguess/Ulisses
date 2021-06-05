@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     @goal.user_id = @user.id
     if @goal.save
-      # redirect_to goal_path(@goal)
+      GoalMailer.with(goal: @goal).new_goal_email.deliver_now
 
       # goal = Goal.find(params[:goal_id])
       @goal.state = 'pending'
@@ -33,11 +33,13 @@ class GoalsController < ApplicationController
         cancel_url: goal_url(@goal),
         customer_email: current_user.email
       ) 
-    
+      
+      flash[:success] = "Thank you for your wishes! We'll get contact you soon!"
       @goal.update(checkout_session_id: session.id)
       User.create(email: @goal.referee, password: "123456")
       redirect_to new_goal_payment_path(@goal)
     else
+      flash.now[:error] = "Your mailer form had some errors. Please check the form and resubmit."
       render "new"
     end
 
