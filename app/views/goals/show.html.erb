@@ -16,12 +16,16 @@
         <h2 class="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
     </div>
     <div class="col bg-dark text-center p-3">
-      <h2 class="text-white text-center">Reveja suas metas</h2>
-        <h1><%= link_to "Ver minhas metas", goals_path, class: 'btn btn-info btn-lg'%></h1>
+        <h1>Prazo</h1>
+        <h2 class="text-center text-white"><%= @goal.deadline%></h2>
+        <%# <h2 class="text-center text-dark"> + desafio</h2> %>
+        <%# <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
     </div>
     <div class="col bg-white text-center p-3">
-        <h2 class="text-center text-dark"> + desafio</h2>
-        <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
+        <h2 class="text-center text-dark">Status</h2>
+        <h2 class="text-center text-dark"><%= @goal.done%></h2>
+        <%# <h2 class="text-center text-dark"> + desafio</h2> %>
+        <%# <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
     </div>
   </div>
 </div>
