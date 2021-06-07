@@ -24,6 +24,27 @@
     <div class="col bg-white text-center p-3">
         <h2 class="text-center text-dark">Status</h2>
         <h2 class="text-center text-danger"><%= @goal.done ? "FEITO" : "PENDENTE"%></h2>
+                
+        <% if @goal.done == false %>
+
+        <%= link_to 'feito', done_page_path(@goal), class: 'btn btn-primary',
+                method: :done %>
+        <% else %>
+
+        <%= link_to 'failed', failed_goal_path(@goal), class: 'btn btn-danger',
+                method: :failed %>
+        <% end %>
+        <%#= link_to 'feito' done_goal_path(done), class: btn btn-primary,
+        #     method: :done,
+        #     data: true
+        # %>
     </div>
   </div>
 </div>
+
+    <%# EXEMPLO DE STIMULUS IN RAILS %>
+
+    <%# <%= content_tag :div, nil, data: {controller: "hello"} do %>
+        <%# <h1 data-target="hello.heading">This is the home page</h1> %>
+        <%# <div class="btn btn-primary" data-action="click->hello#greet">Say Hello</div> %>
+    <%# <% end %>

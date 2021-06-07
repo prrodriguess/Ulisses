@@ -2,11 +2,19 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :goals do
-    get 'done' => 'goals#done'
+    member do 
+      get :status
+      post :status
+      post :done
+      post :failed
+    end
     resources :payments, only: [:new, :show]
   end
+
+  resources :pages
   
   get 'congratulations' => 'pages#congratulations'
+
   root to: 'pages#home'
 
   require "sidekiq/web"
