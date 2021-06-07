@@ -1,19 +1,23 @@
 <%= render 'shared/navbar2' %>
-<div class="container p-5">
-  <div class="row">
-    <% @goals.each do |goal| %>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title text-center text-dark"> <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id) %> </h3>
-            <h3><%= link_to "Remover", goal_path(goal.id), method: :delete %></h3>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
+<section>
+  <div class="container"> <!-- Inicio container -->
+    <div class="row">
+      <% @goals.each do |goal| %>
+      <div class="col-md-4">
+         <div class="cards"> 
+            <div class="card">
+                <h3 class="card-title"><%= goal.title %></h3>
+                <%= image_tag("fumar2.png")%>
+                <p class="card-desc">Assuma o compromisso para parar de fumar colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
+                <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id) %> <br><br>
+                <%= link_to "Remover", goal_path(goal.id), method: :delete %></p>
+            </div>
+         </div>
+      </div> 
+      <% end %>
+    </div> 
+    </div>
+  </div><!-- fim do container -->
+</section><!-- fim seção card -->
 
 
