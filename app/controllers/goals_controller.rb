@@ -1,16 +1,17 @@
 class GoalsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :new]
   before_action :store_url, only: [:new]
-  before_action :set_goal, only: [:show, :edit, :update, :destroy, :done]
+  before_action :set_goal, only: [:show, :edit, :update, :destroy, :done, :failed]
   before_action :set_user
 
   def index
     @body_image = "body-image-index"
     @goals = Goal.all
   end
-
+  
   def create
     @goal = Goal.new(goal_params)
+    # @goal.done ? true : false
     @goal.user_id = @user.id
     if @goal.save
       GoalMailer.with(goal: @goal).new_goal_email.deliver_now
@@ -46,6 +47,7 @@ class GoalsController < ApplicationController
   end
 
   def new
+    # @goal = Goal.where(done: false).find(params[:goal_id])
     unless current_user.present? 
       redirect_to new_user_session_path
     end
@@ -75,12 +77,33 @@ class GoalsController < ApplicationController
     redirect_to goals_path
   end
 
-  def done
-    @goal.done = true
-    @goal.save
+  def status
+    @body_image = "body-image-show"
+    @goal = Goal.find(params[:id])
   end
 
+  def done
+    @body_image = "body-image-show"
+    @goal = Goal.find(params[:id])
+    @goal.done = true
+      if @goal.done
+        @goal.save
+        redirect_to status_goal_path
+      else
+        render 'status'
+      end
+  end
+  
   def failed
+    @body_image = "body-image-show"
+    @goal = Goal.find(params[:id])
+    @goal.done = false
+    if @goal.done
+      @goal.save
+      redirect_to status_goal_path
+    else
+      render 'status'
+    end
   end
 
   private
@@ -98,6 +121,6 @@ class GoalsController < ApplicationController
   end
 
   def goal_params
-    params.require(:goal).permit(:deadline, :penalty, :title, :referee)
+    params.require(:goal).permit(:deadline, :penalty, :title, :referee, :done)
   end
 end
