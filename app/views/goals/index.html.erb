@@ -8,7 +8,7 @@
             <div class="card">
                 <h3 class="card-title"><%= goal.title %></h3>
                 <%= image_tag("fumar2.png")%>
-                <p class="card-desc">Assuma o compromisso para parar de fumar colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
+                <p class="card-desc">Assuma o compromisso <%= goal.title %> colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
                 <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id) %> <br><br>
                 <%= link_to "Remover", goal_path(goal.id), method: :delete %></p>
             </div>
