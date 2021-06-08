@@ -27,13 +27,14 @@
 
         <% if @goal.done == false %>
 
-        <%= link_to 'feito', done_goal_path(@goal), class: 'btn btn-primary',
+        <%= link_to 'Cumpriu', done_goal_path(@goal, done: true), class: 'btn btn-primary',
                 method: :done %>
         <% else %>
 
-        <%= link_to '', done_goal_path(@goal), class: '',
+        <%= link_to 'Não Cumpriu', done_goal_path(@goal, done: false), class: 'btn btn-danger',
                 method: :failed %>
         <% end %>
+
     </div>
   </div>
 </div>
