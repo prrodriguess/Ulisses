@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     member do 
       get :status
       post :status
+      get :done
       post :done
-      post :failed
     end
     resources :payments, only: [:new, :show]
   end
