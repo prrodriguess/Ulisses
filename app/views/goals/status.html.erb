@@ -3,17 +3,17 @@
 <div class="container rounded-3 p-4">
   <div class="row">
     <div class="col-7 bg-white text-center p-3">
-        <%# <h4>Tempo Restante</h4> %>
         <h2 class="text-center text-dark">Acabou o tempo! <br> <%= @user.name%> cumpriu sua meta?</h2>
     </div>
     <div class="col-5 bg-info p-3 text-center">
         <h2 class="text-center text-dark"><%= @goal.title%></h2>
     </div>
   </div>
+  
   <div class="row">
     <div class="col bg-danger text-center text-white p-3">
         <h1 class="text-center text-dark">NÃO CUMPRIU</h1>
-        <%# <h2 class="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
+        <%# <h2 class="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %>
     </div>
     <div class="col bg-dark text-center p-3">
         <h2 class="text-center text-white">EXPIRADO</h2>
@@ -21,20 +21,20 @@
         <%# <h2 class="text-center text-dark"> + desafio</h2> %>
         <%# <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
     </div>
-    <div class="col bg-success text-center p-3">
+    
+    <%= link_to done_goal_path(@goal, done: true) do %>
+      <div class="col bg-success text-center p-3">
         <h2 class="text-center text-dark">CUMPRIU</h2>
-        <%# <h2 class="text-center text-danger"><%= @goal.done ? "FEITO" : "PENDENTE"%></h2>
+      </div>
+    <% end %>
+        <%# <h2 class="text-center text-danger"><%= @goal.done ? "FEITO" : "PENDENTE"%>
 
         
 
-        <%# <%= link_to 'Cumpriu', done_goal_path(@goal, done: true), class: 'btn btn-primary', %>
-                <%# method: :done %> 
+                <%# method: :done 
         
 
         <%# <%= link_to 'Não Cumpriu', done_goal_path(@goal, done: false), class: 'btn btn-danger', %>
                 <%# method: :failed %> 
-        
-
-    </div>
   </div>
 </div>
