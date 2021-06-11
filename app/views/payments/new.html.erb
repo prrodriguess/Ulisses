@@ -1,5 +1,5 @@
 <div class="row" style="height: 100%;">
-  <div class="col-4 bg-dark">
+  <div class="col-3 bg-dark">
       <h1 class="text-center text-success" style="margin-top: 38%;"><%= humanized_money_with_symbol @goal.penalty %>
         <button id="pay" class="new-b">Pagar agora</button>
       </h1>
@@ -15,7 +15,7 @@
       </script>
   </div>
 
-  <div class="col-8 pt-4">
+  <div class="col-9 pt-4">
     <h1 class="text-white" style="margin-top: 100px;">Eu, <span class="text-white"><%= current_user.name %></span>, vou <br>
     <span class="text-white"><%= @goal.title %></span> <span class="text-white">, ou pagar <span class="text-danger"> <%= humanized_money_with_symbol @goal.penalty %></span></span>
     
