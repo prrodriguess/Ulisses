@@ -16,8 +16,8 @@
   </div>
 
   <div class="col-8 pt-4">
-    <h1 class="text-white" style="margin-top: 100px;">Eu <span class="text-white"><%= current_user.name %></span> vou <br>
-    <span class="text-white"><%= @goal.title %></span> <span class="text-white"> arriscando <span class="text-danger">- <%= humanized_money_with_symbol @goal.penalty %></span></span>
+    <h1 class="text-white" style="margin-top: 100px;">Eu, <span class="text-white"><%= current_user.name %></span>, vou <br>
+    <span class="text-white"><%= @goal.title %></span> <span class="text-white">, ou pagar <span class="text-danger"> <%= humanized_money_with_symbol @goal.penalty %></span></span>
     
   </div>
 </div>
