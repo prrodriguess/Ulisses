@@ -9,6 +9,10 @@ class PagesController < ApplicationController
   	@body_image = "body-image-congratulations"
   end
 
+  def referee
+  	@body_image = "body-image-congratulations"
+  end
+
   def done
     @goal = Goal.find(params[:id])
     @goal.done = true
