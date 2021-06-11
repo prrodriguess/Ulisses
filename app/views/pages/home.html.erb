@@ -1,6 +1,6 @@
   <%= render 'shared/navbar' %>
     <section id="home" class="d-flex"> <!-- home -->
-        <div class="container align-self-center"><!-- inicio container -->
+        <div class="container align-self-center" style="margin-top: 57px"><!-- inicio container -->
           <div class="row"> <!-- inicio row -->
             <div class="col-md-12 capa">
               <h1 id="effect">Assuma o controle.<br>Seja seu próprio ídolo.</h1>
@@ -100,11 +100,13 @@
       <footer>
         <div class="container"> 
           <div class="row">
-            <div class="col-md-2">
-              <h3>Ulisses</h3>
+            <div class="col-2">
+              <div class=""><%= image_tag "SOS Mata Atlantica.png", style: 'width: 50px;' %></div>
+              <div class="mt-4"><%= image_tag "fraternindade.png", style: 'width: 90px;' %></div>
+              <div class="mt-4"><%= image_tag "Atados logo.png", style: 'width: 90px;' %></div>
             </div>
-            <div class="col-md-2">
-              <h4>Company</h4>
+            <div class="col-2 ms-3 ps-3">
+              <h3>Ulisses</h3>
               <ul class="navbar-nav">
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Empregos</a></li>
@@ -112,23 +114,23 @@
                 <li><a href="#">Novidades</a></li>
               </ul>
             </div>
-            <div class="col-md-2">
-              <h4>Comunidade</h4>
+            <div class="col-2">
+              <h3>Comunidade</h3>
               <ul class="navbar-nav">
                 <li><a href="#">Artistas</a></li>
                 <li><a href="#">Desenvolvimento</a></li>
                 <li><a href="#">Marcas</a></li>
               </ul>
             </div>
-            <div class="col-md-2">
-              <h4>Links Uteis</h4>
+            <div class="col-2">
+              <h3>Links Uteis</h3>
               <ul class="navbar-nav">
                 <li><a href="#">Ajuda</a></li>
                 <li><a href="#">Presentes</a></li>
                 <li><a href="#">Player da web</a></li>
               </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-3">
               <ul>
                 <li>
                   <%= image_tag("facebook.png") %>
