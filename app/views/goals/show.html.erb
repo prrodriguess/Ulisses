@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col bg-white text-center p-3">
         <h3 class="text-dark text-center">Tempo Restante</h3>
-        <h2 attr-deadline="<%= @goal.deadline %>" id="countdown" class=" text-center text-dark rounded-3"></h2>
+        <h2 attr-deadline="<%= @goal.done ? "PARABÉNS! META CUMPRIDA!" : @goal.deadline %>" id="countdown" class=" text-center text-dark rounded-3"></h2>
     </div>
     <div class="col bg-info p-3 text-center">
         <h2 class="text-center text-dark"><%= @goal.title%></h2>
