@@ -6,11 +6,11 @@
       <div class="col-md-4">
          <div class="cards"> 
             <div class="card">
-                <h3 class="card-title"><%= goal.title %></h3>
+                <h4 class="card-title"><%= goal.title %></h4>
                 <%= image_tag("fumar2.png")%>
                 <p class="card-desc">Assuma o compromisso <%= goal.title %> colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
-                <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id) %> <br><br>
-                <%= link_to "Remover", goal_path(goal.id), method: :delete %></p>
+                <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id), class: "new-b" %> <br><br>
+                <%= link_to "Remover", goal_path(goal.id), method: :delete, class: "new-b" %></p>
             </div>
          </div>
       </div> 
