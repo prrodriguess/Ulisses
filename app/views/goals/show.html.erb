@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col bg-white text-center p-3">
         <h3 class="text-dark text-center">Tempo Restante</h3>
-        <h2 attr-deadline="<%= @goal.done ? "PARABÉNS! META CUMPRIDA!" : @goal.deadline %>" id="countdown" class=" text-center text-dark rounded-3"></h2>
+          <h2 attr-deadline="<%= @goal.done ? "0" : @goal.deadline %>" id="countdown" class=" text-center text-dark rounded-3"></h2>
     </div>
     <div class="col bg-info p-3 text-center">
         <h2 class="text-center text-dark"><%= @goal.title%></h2>
@@ -13,17 +13,19 @@
   <div class="row">
     <div class="col bg-danger text-center text-white p-3">
         <h2 class="text-center text-white">Penalidade</h2>
-        <h2 class="text-center text-white"><%= humanized_money_with_symbol(@goal.penalty) %></h2>
+        <h2 class="text-center text-white"><%= @goal.done ? "nenhuma" : humanized_money_with_symbol(@goal.penalty) %></h2>
     </div>
     <div class="col bg-dark text-center p-3">
         <h2 class="text-center text-white">Prazo</h2>
         <h2 class="text-center text-white"><%= @goal.deadline.strftime("%d/%m/%Y")%></h2>
-        <%# <h2 class="text-center text-dark"> + desafio</h2> %>
-        <%# <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
     </div>
     <div class="col bg-white text-center p-3">
         <h2 class="text-center text-dark">Status</h2>
-        <h2 class="text-center text-danger"><%= @goal.done ? "FEITO" : "PENDENTE"%></h2>
+        <% if @goal[:done] == true %>
+          <h2 class="text-center text-success">Feito</h2>
+        <% elsif @goal[:done] == false %>
+          <h2 class="text-center text-danger">Pendente</h2>          
+        <% end %>
     </div>
   </div>
 </div>

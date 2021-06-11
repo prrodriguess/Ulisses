@@ -86,21 +86,8 @@ class GoalsController < ApplicationController
     @body_image = "body-image-show"
     @goal.done = params[:done]
     @goal.save
-#     redirect_to congratulations_page_path
     redirect_to referee_path
   end
-  
-  # def failed
-  #   @body_image = "body-image-show"
-  #   @goal = Goal.find(params[:id])
-  #   @goal.done = false
-  #   if @goal.done
-  #     @goal.save
-  #     redirect_to status_goal_path
-  #   else
-  #     render 'status'
-  #   end
-  # end
 
   private
 

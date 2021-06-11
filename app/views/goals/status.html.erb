@@ -24,9 +24,11 @@
 
     <div class="col bg-dark text-center p-3">
         <h2 class="text-center text-white"><%= @user.name%> cumpriu sua meta?</h2>
-        <h2 class="text-center text-danger"><%= @goal.done ? "FEITO" : "PENDENTE" %></h2>
-        <%# <h2 class="text-center text-dark"> + desafio</h2> %>
-        <%# <h1><%= link_to "Home", root_path, class: 'btn btn-primary btn-lg'%></h1>
+        <% if @goal[:done] == true %>
+          <h2 class="text-center text-success">Feito</h2>
+        <% elsif @goal[:done] == false %>
+          <h2 class="text-center text-danger">Pendente</h2>          
+        <% end %>
     </div>
     
     <%= link_to done_goal_path(@goal, done: true),
