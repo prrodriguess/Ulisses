@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :pages
   
   get 'congratulations' => 'pages#congratulations'
+  get 'referee' => 'pages#referee'
 
   root to: 'pages#home'
 
