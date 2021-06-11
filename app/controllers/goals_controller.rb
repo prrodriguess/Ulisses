@@ -86,7 +86,7 @@ class GoalsController < ApplicationController
     @body_image = "body-image-show"
     @goal.done = params[:done]
     @goal.save
-    redirect_to status_goal_path
+    redirect_to congratulations_page_path
   end
   
   # def failed

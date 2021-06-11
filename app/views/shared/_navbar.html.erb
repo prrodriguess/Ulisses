@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="nav-principal">
               <ul class="navbar-nav ml-auto">
                 <% if user_signed_in? %>
-                  <%= link_to "Home", root_path, class: "nav-link mr-4" %>
+                  <%= link_to "inicio", root_path, class: "nav-link mr-4" %>
                   <%= link_to "Minhas Metas", goals_path, class: "nav-link mr-4" %>
                   <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link mr-4" %>
                   <!-- <li class="nav-item active">
