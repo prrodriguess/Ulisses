@@ -25,7 +25,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "Você se tornou um herói";
+    document.getElementById("countdown").innerHTML = "Parabéns! Você ganhou um troféu para sua galeria.";
   }
 }, 1000);
 
