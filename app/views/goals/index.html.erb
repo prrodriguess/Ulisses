@@ -1,24 +1,25 @@
 <%= render 'shared/navbar2' %>
-<section>
+<section class="caixa">
   <div class="container"> <!-- Inicio container -->
     <div class="row">
       <% @goals.each do |goal| %>
-      <div class="col-md-4">
-         <div class="cards"> 
-            <div class="card">
-                <h3 class="card-title"><%= goal.title %></h3>
-                <%#= image_tag("fumar2.png")%>
-                <%= image_tag "assets/#{rand(4)}.jpg", style: 'height: 400px' %>
-                <p class="card-desc">Assuma o compromisso <%= goal.title %> colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
-                <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id), class: "new-b" %> <br><br>
-                <%= link_to "Remover", goal_path(goal.id), method: :delete, class: "new-b" %></p>
+        <div class="col-md-4">
+          <div class="card">
+            <p class="bg-white text-center"><%= goal.title %></p>
+              <%= image_tag "assets/#{rand(4)}.jpg", style: 'height: 400px' %>
+            <div class="face back-face"> <span class="fas fa-quote-left"></span> 
+              <p class="card-desc">Assuma o compromisso <%= goal.title %> colocando em risco seu próprio dinheiro. E aí você aceita este desafio? <br><br>
+              <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id), class: "new-b" %> <br><br>
+              <%= link_to "Remover", goal_path(goal.id), method: :delete, class: "new-b" %></p>
             </div>
          </div>
       </div> 
       <% end %>
     </div> 
-    </div>
   </div><!-- fim do container -->
 </section><!-- fim seção card -->
+
+
+
 
 
