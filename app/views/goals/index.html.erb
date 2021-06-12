@@ -9,7 +9,7 @@
                 <h3 class="card-title"><%= goal.title %></h3>
                 <%= image_tag "assets/#{rand(4)}.jpg", style: 'height: 400px' %>
                 <p class="card-desc">Assuma o compromisso <%= goal.title %><br><br>
-                <%= link_to "#{goal.title}\n (#{goal.done ? 'FEITO' : 'PENDENTE'})", goal_path(goal.id), class: "btn btn-warning text-white", style: 'font-size: 1.6rem;' %> <br><br>
+                <%= link_to "#{goal.title}", goal_path(goal.id), class: "btn btn-warning text-white", style: 'font-size: 1.6rem;' %> <br><br>
                 <%= link_to "Remover", goal_path(goal.id), method: :delete, class: "btn btn-warning text-white", style: 'font-size: 1.6rem;' %></p>
             </div>
          </div>
