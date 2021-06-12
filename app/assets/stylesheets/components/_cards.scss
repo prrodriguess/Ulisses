@@ -17,7 +17,7 @@
 	display: block;
 	text-align: center;
 	color: #fff;
-	background-color: #6184a8;
+	background-color: #242423;
 	padding: 2%;
 	margin: 0px;
 	border-top-right-radius: 4px;
@@ -34,15 +34,14 @@
 
 .card-desc {
 	display: block;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 	position: absolute;
 	height: 0;
 	top: 0;
 	opacity: 0;
 	padding: 18px 8%;
 	background-color: white;
-	overflow-y: scroll;
-	transition: 0.8s ease;
+	transition: 0.4s ease;
 }
 
 .card:hover .card-desc {
