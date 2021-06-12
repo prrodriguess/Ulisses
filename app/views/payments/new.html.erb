@@ -1,7 +1,7 @@
 <div class="row" style="height: 100%;">
   <div class="col-3 bg-dark">
       <h1 class="text-center text-success" style="margin-top: 38%;"><%= humanized_money_with_symbol @goal.penalty %>
-        <button id="pay" class="new-b">Pagar agora</button>
+        <button id="pay" class="new-b">ASSUMIR COMPROMISSO</button>
       </h1>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -13,6 +13,7 @@
           });
         });
       </script>
+      <P class="text-center text-white">Você só será cobrado se não cumprir sua meta dentro do prazo.</P>
   </div>
 
   <div class="col-9 pt-4">
